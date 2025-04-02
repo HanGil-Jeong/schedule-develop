@@ -59,7 +59,7 @@
 - 로그인 시 이메일과 비밀번호가 일치하지 않을 경우 HTTP Status code 401을 반환
 
 ## ERD
-![schedule-develop_ERD]()
+![schedule-develop_ERD](https://github.com/HanGil-Jeong/schedule-develop/blob/main/schedule-develop_ERD.png?raw=true)
 
 ## ✒️ API 명세서
 - Schedule
