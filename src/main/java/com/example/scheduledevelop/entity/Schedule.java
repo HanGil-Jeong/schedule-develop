@@ -18,6 +18,7 @@ public class Schedule extends BaseEntity {
     @Column(nullable = false)
     private String scheduleTitle;
 
+    @Column(nullable = false)
     private String scheduleContents;
 
     @ManyToOne

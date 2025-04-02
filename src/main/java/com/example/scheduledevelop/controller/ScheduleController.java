@@ -25,7 +25,7 @@ public class ScheduleController {
                 scheduleService.scheduleSave(
                         requestDto.getWriterUsername(),
                         requestDto.getScheduleTitle(),
-                        requestDto.getSchedeuleContents()
+                        requestDto.getScheduleContents()
                 );
 
         return new ResponseEntity<>(scheduleResponseDto, HttpStatus.CREATED);
