@@ -42,11 +42,21 @@ public class ScheduleService {
     }
 
     @Transactional
-    public void updateSchedule(Long id, String writerUsername, String scheduleTitle, String scheduleContents) {
+    public ScheduleResponseDto updateSchedule(Long id, String writerUsername, String scheduleTitle, String scheduleContents) {
 
         Schedule findSchedule = scheduleRepository.findByIdOrElseThrow(id);
 
         findSchedule.updateSchedule(writerUsername, scheduleTitle, scheduleContents);
+
+        return new ScheduleResponseDto(findSchedule.getId(), findSchedule.getWriterUsername(),findSchedule.getScheduleTitle(), findSchedule.getScheduleContents());
+
+    }
+
+    public void deleteSchedule(Long id) {
+
+        Schedule findSchedule = scheduleRepository.findByIdOrElseThrow(id);
+
+        scheduleRepository.delete(findSchedule);
 
     }
 }
