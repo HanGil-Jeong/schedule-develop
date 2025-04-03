@@ -33,6 +33,7 @@ public class Schedule extends BaseEntity {
         this.scheduleContents = scheduleContents;
     }
 
+    //일정 수정을 위한 SETTER
     public void updateSchedule(String writerUsername, String scheduleTitle, String scheduleContents) {
         this.writerUsername = writerUsername;
         this.scheduleTitle = scheduleTitle;
