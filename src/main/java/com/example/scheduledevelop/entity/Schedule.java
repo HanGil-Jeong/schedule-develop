@@ -32,4 +32,11 @@ public class Schedule extends BaseEntity {
         this.scheduleTitle = scheduleTitle;
         this.scheduleContents = scheduleContents;
     }
+
+    public void updateSchedule(String writerUsername, String scheduleTitle, String scheduleContents) {
+        this.writerUsername = writerUsername;
+        this.scheduleTitle = scheduleTitle;
+        this.scheduleContents = scheduleContents;
+    }
+
 }
