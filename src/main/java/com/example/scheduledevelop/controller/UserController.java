@@ -2,6 +2,7 @@ package com.example.scheduledevelop.controller;
 
 import com.example.scheduledevelop.dto.SignUpRequestDto;
 import com.example.scheduledevelop.dto.SignUpResponseDto;
+import com.example.scheduledevelop.dto.UpdatePasswordRequestDto;
 import com.example.scheduledevelop.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +40,16 @@ public class UserController {
         SignUpResponseDto signUpResponseDto = userService.findUserInfoById(id);
 
         return new ResponseEntity<>(signUpResponseDto, HttpStatus.OK);
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> updatePassword(
+            @PathVariable Long id,
+            @RequestBody UpdatePasswordRequestDto requestDto) {
+
+        userService.updatePassword(id, requestDto.getOldPassword(), requestDto.getNewPassword());
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
