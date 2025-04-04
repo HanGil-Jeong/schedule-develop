@@ -44,4 +44,11 @@ public class UserService {
 
         findUserById.UpdatePassword(newPassword);
     }
+
+    public void deleteUerInfoById(Long id) {
+
+        User findUserById = userRepository.findByIdOrElseThrow(id);
+
+        userRepository.delete(findUserById);
+    }
 }
