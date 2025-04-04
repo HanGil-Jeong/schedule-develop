@@ -52,4 +52,12 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUerInfoById(@PathVariable Long id) {
+
+        userService.deleteUerInfoById(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
