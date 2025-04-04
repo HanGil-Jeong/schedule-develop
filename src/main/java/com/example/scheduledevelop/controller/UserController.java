@@ -18,7 +18,9 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<SignUpResponseDto> saveUserInfo(@RequestBody SignUpRequestDto requestDto) {
+    public ResponseEntity<SignUpResponseDto> saveUserInfo(
+            @RequestBody SignUpRequestDto requestDto
+    ) {
 
         SignUpResponseDto signUpResponseDto =
                 userService.saveUserInfo(
@@ -29,6 +31,14 @@ public class UserController {
                 );
 
         return new ResponseEntity<>(signUpResponseDto, HttpStatus.CREATED);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<SignUpResponseDto> findUserInfoById(@PathVariable Long id) {
+
+        SignUpResponseDto signUpResponseDto = userService.findUserInfoById(id);
+
+        return new ResponseEntity<>(signUpResponseDto, HttpStatus.OK);
     }
 
 }

@@ -22,4 +22,11 @@ public class UserService {
 
         return new SignUpResponseDto(saveUserInfo.getId(), saveUserInfo.getUsername(), saveUserInfo.getAge(), saveUserInfo.getEmail());
     }
+
+    public SignUpResponseDto findUserInfoById(Long id) {
+
+        User findUserById = userRepository.findByIdOrElseThrow(id);
+
+        return new SignUpResponseDto(findUserById.getId(),findUserById.getUsername(), findUserById.getAge(), findUserById.getEmail());
+    }
 }
